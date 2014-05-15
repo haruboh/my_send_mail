@@ -1,0 +1,18 @@
+# Ignore bundler config.
+/.bundle
+/vendor/bundle
+
+# Ignore other unneeded files.
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
+run.sh
+config/config.yml
+
+Gemfile.lock
+.ruby-version
+

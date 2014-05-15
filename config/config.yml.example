@@ -1,0 +1,20 @@
+#config for sendmail
+
+dir: /home
+file_count: 100
+
+mail:
+  charset: utf-8
+  from: example@example.com
+  to: 
+  - foo@bar.com
+  - hoge@piyo.com
+  subject: 不具合発生
+  
+send_param:
+  address: 255.255.255.255
+  port: 25
+  domain: localdomain.localhost.com
+  authentication: :login
+
+
