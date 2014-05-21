@@ -22,6 +22,7 @@ class Send_mail
     @delivary[:port] = config["send_param"]["port"].to_i
     @delivary[:domain] = config["send_param"]["domain"]
     @delivary[:authentication] = config["send_param"]["authentication"]
+    Dir.chdir(@dir)
   end
 
   def make_and_send_mail
@@ -51,11 +52,19 @@ class Send_mail
   end
 
   def run
-    Dir.chdir(@dir)
     if @count < Dir.glob("*").count
       make_and_send_mail()
     end
   end
+
+  def test
+    make_and_send_mail()
+  end
 end
+
 CONFIG = 'config/config.yml'
-Send_mail.new().run
+unless ARGV[0] == "test"
+  Send_mail.new().run
+else
+  Send_mail.new().test
+end
